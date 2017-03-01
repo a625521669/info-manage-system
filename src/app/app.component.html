@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<Header></Header>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <!-- left menu starts -->
+    <Slider></Slider>
+    <!--/span-->
+    <!-- left menu ends -->
+
+    <div id="content" class="span10">
+      <!-- content starts -->
+
+      <router-outlet></router-outlet>
+      <!-- content ends -->
+    </div>
+    <!--/#content.span10-->
+  </div>
+  <!--/fluid-row-->
+
+</div>
