@@ -20,7 +20,6 @@ import { UserListComponent } from './user-list.component';
     UserAddComponent,
     UserListComponent
   ],
-  bootstrap: []
 })
 
 export class UserModule { }
