@@ -2,30 +2,25 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { UserService } from './user.service';
 
-import Config from '../app.config';
-
 //声明jquery
 declare const $: any;
 
 @Component({
-    selector: 'UserList',
-    templateUrl: './user-list.component.html',
+    selector: 'UserInfoList',
+    templateUrl: './user-info-list.component.html',
     providers: [UserService]
 })
 
-export class UserListComponent {
+export class UserInfoListComponent {
     //构造方法
-    constructor(private userService: UserService) {
-    }
+    constructor(private userService: UserService) { }
 
     public data = {};
     public changedName = "";
 
-    public userType = Config.userType;
-
     //绑定列表数据
     bindData = () => {
-        this.userService.list()
+        this.userService.infoList()
             .then((result) => {
                 this.data = result
             });
@@ -48,18 +43,6 @@ export class UserListComponent {
         } else {
             return false;
         }
-
-    }
-
-    //显示密码修改面板
-    showPasswprdChangeFn = (userName) => {
-        console.log(userName);
-        this.changedName = userName;
-        $("#myModal").modal("show");
-    }
-
-    //修改密码
-    changePasswordFn = () => {
 
     }
 }

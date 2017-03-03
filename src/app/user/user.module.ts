@@ -6,6 +6,7 @@ import { RouterConfig } from './user.router';
 
 import { UserAddComponent } from './user-add.component';
 import { UserListComponent } from './user-list.component';
+import { UserInfoListComponent } from './user-info-list.component';
 
 @NgModule({
   imports: [
@@ -14,11 +15,13 @@ import { UserListComponent } from './user-list.component';
   ],
   declarations: [
     UserAddComponent,
-    UserListComponent
+    UserListComponent,
+    UserInfoListComponent
   ],
   exports: [
     UserAddComponent,
-    UserListComponent
+    UserListComponent,
+    UserInfoListComponent
   ],
 })
 

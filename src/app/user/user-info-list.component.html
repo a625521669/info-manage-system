@@ -4,7 +4,7 @@
             <a routerLink="/">首页</a> <span class="divider">/</span>
         </li>
         <li>
-            <a>用户账户列表</a>
+            <a>用户信息列表</a>
         </li>
     </ul>
 </div>
@@ -12,7 +12,7 @@
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">
-            <h2><i class="icon-user"></i> 用户列表</h2>
+            <h2><i class="icon-user"></i> 用户信息列表</h2>
             <div class="box-icon">
                 <!--<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -35,11 +35,23 @@
                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending"
                                 style="width: 157px;">序号</th>
                             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Username: activate to sort column descending" style="width: 309px;">用户名</th>
-                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending"
-                                style="width: 256px;">注册时间</th>
+                                aria-label="Username: activate to sort column descending" style="width: 309px;">学号</th>
                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
-                                style="width: 149px;">角色</th>
+                                style="width: 149px;">注册时间</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending"
+                                style="width: 256px;">姓名</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                style="width: 149px;">性别</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                style="width: 149px;">政治面貌</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                style="width: 149px;">出生年月</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                style="width: 149px;">班级</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                style="width: 149px;">住址</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                style="width: 149px;">电话号码</th>
                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending"
                                 style="width: 565px;">操作</th>
                         </tr>
@@ -48,18 +60,20 @@
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
                         <tr class="even" *ngFor="let item of data.list; let i=index">
                             <td class="center">{{i + 1}}</td>
-                            <td class="sorting_1">{{item.UserName}}</td>
+                            <td class="sorting_1">{{item.NO}}</td>
                             <td class="center ">{{item.CreateOn | date:"yyyy/MM/dd"}}</td>
-                            <td class="center ">{{userType[item.Pemission]}}</td>
-
+                            <td class="center ">{{item.Name}}</td>
+                            <td class="center ">{{item.Sex}}</td>
+                            <td class="center ">{{item.Display}}</td>
+                            <td class="center ">{{item.BorthDate | date:"yyyy/MM/dd"}}</td>
+                            <td class="center ">{{item.OwnPart}}</td>
+                            <td class="center ">{{item.Address}}</td>
+                            <td class="center ">{{item.Phone}}</td>
                             <td class="center ">
                                 <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i> 个人信息
+                                    <i class="icon-zoom-in icon-white"></i> 编辑
                                 </a>
-                                <a class="btn btn-info" (click)="showPasswprdChangeFn(item.UserName)">
-                                    <i class="icon-edit icon-white"></i> 修改密码
-                                </a>
-                                <a class="btn btn-danger" (click)="deleteFn(item.UserName)">
+                                <a class="btn btn-danger" (click)="deleteFn(item.NO)">
                                     <i class="icon-trash icon-white"></i> 删除
                                 </a>
                             </td>
