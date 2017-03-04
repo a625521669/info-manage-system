@@ -5,14 +5,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { UserModule } from './user/user.module';
+import { LoginModule } from './login/login.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 
-import { appRoutes } from './app.router';
+import { appRoutesModule } from './app.router';
 
 @NgModule({
     imports: [
@@ -20,14 +20,14 @@ import { appRoutes } from './app.router';
     FormsModule,
     HttpModule,
     UserModule,
-    RouterModule.forRoot(appRoutes, { useHash: false }),
+    LoginModule,
+    appRoutesModule
   ],
   declarations: [
     AppComponent,
     HeaderComponent,
     SliderComponent,
     HomeComponent,
-    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
