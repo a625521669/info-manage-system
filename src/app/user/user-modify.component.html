@@ -4,7 +4,7 @@
             <a routerLink="/">首页</a> <span class="divider">/</span>
         </li>
         <li>
-            <a>添加新用户</a>
+            <a>编辑用户信息</a>
         </li>
     </ul>
 </div>
@@ -13,12 +13,12 @@
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">
-            <h2><i class="icon-edit"></i> 添加新用户</h2>
+            <h2><i class="icon-edit"></i> 编辑用户信息</h2>
         </div>
         <div class="box-content">
             <form id="formData" class="form-horizontal">
                 <fieldset>
-                    <div class="control-group">
+                    <!--<div class="control-group">
                         <label class="control-label" for="selectError3">用户类型</label>
                         <div class="controls">
                             <select name="Pemission">
@@ -27,18 +27,18 @@
 									<option value="3">管理员</option>
 								  </select>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">姓名</label>
                         <div class="controls">
-                            <input name="Name" class="input-xlarge focused" id="focusedInput" type="text">
+                            <input [(ngModel)]="data.Name" name="Name" class="input-xlarge focused" id="focusedInput" type="text">
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">性别</label>
                         <div class="controls">
-                            <select name="Sex">
+                            <select [(ngModel)]="data.Sex" name="Sex">
 									<option value="男">男</option>
 									<option value="女">女</option>
 								  </select>
@@ -47,7 +47,7 @@
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">政治面貌</label>
                         <div class="controls">
-                            <select name="Display">
+                            <select [(ngModel)]="data.Display" name="Display">
 									<option value="党员">党员</option>
 									<option value="团员">团员</option>
 									<option value="群众">群众</option>
@@ -57,30 +57,30 @@
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">出生年月</label>
                         <div class="controls">
-                            <input name="BorthDate" class="input-xlarge focused" id="focusedInput" type="date">
+                            <input [value]="data.BorthDate | date:'yyyy-MM-dd'" name="BorthDate" class="input-xlarge focused" type="date">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">班级</label>
                         <div class="controls">
-                            <input name="OwnPart" class="input-xlarge focused" id="focusedInput" type="text">
+                            <input [(ngModel)]="data.OwnPart" name="OwnPart" class="input-xlarge focused" id="focusedInput" type="text">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">住址</label>
                         <div class="controls">
-                            <input name="Address" class="input-xlarge focused" id="focusedInput" type="text">
+                            <input [(ngModel)]="data.Address" name="Address" class="input-xlarge focused" id="focusedInput" type="text">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="focusedInput">电话号码</label>
                         <div class="controls">
-                            <input name="Phone" class="input-xlarge focused" id="focusedInput" type="text">
+                            <input [(ngModel)]="data.Phone" name="Phone" class="input-xlarge focused" id="focusedInput" type="text">
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button (click)="saveData()" type="button" class="btn btn-primary">添加</button>
-                        <button class="btn" type="reset">重置</button>
+                        <button (click)="saveData()" type="button" class="btn btn-primary">修改</button>
+                        <button class="btn">取消</button>
                     </div>
                 </fieldset>
             </form>

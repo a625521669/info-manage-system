@@ -9,14 +9,14 @@ import 'rxjs/add/operator/toPromise';
 export class UserService {
     constructor(private http: Http) { }
 
-    list() {
-        return this.http.get(Config.apiHost + "/user/list")
+    list(keywords, type) {
+        return this.http.get(Config.apiHost + "/user/list?keywords=" + keywords + "&type=" + type)
             .toPromise()
             .then(response => response.json())
     }
 
-    infoList() {
-        return this.http.get(Config.apiHost + '/user/InfoList')
+    infoList(keywords) {
+        return this.http.get(Config.apiHost + '/user/InfoList?keywords=' + keywords)
             .toPromise()
             .then(response => response.json())
     }
@@ -35,6 +35,24 @@ export class UserService {
 
     deleteUser(userName) {
         return this.http.get(Config.apiHost + "/user/delete?userName=" + userName)
+            .toPromise()
+            .then(response => response.json())
+    }
+
+    addUser(body) {
+        return this.http.post(Config.apiHost + "/user/AddUser", body)
+            .toPromise()
+            .then(response => response.json())
+    }
+
+    modifyUser(body) {
+        return this.http.post(Config.apiHost + "/user/modify", body)
+            .toPromise()
+            .then(response => response.json())
+    }
+
+    getInfo(id) {
+        return this.http.get(Config.apiHost + "/user/Info?userId=" + id)
             .toPromise()
             .then(response => response.json())
     }

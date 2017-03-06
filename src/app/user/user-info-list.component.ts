@@ -16,11 +16,12 @@ export class UserInfoListComponent {
     constructor(private userService: UserService) { }
 
     public data = {};
-    public changedName = "";
+    public changedName = '';
+    public keywords = '';
 
     //绑定列表数据
     bindData = () => {
-        this.userService.infoList()
+        this.userService.infoList(this.keywords)
             .then((result) => {
                 this.data = result
             });
@@ -44,5 +45,12 @@ export class UserInfoListComponent {
             return false;
         }
 
+    }
+
+    //搜索
+    search(keywords) {
+        this.keywords = keywords;
+
+        this.bindData();
     }
 }

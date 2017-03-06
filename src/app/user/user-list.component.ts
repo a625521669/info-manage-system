@@ -20,12 +20,13 @@ export class UserListComponent {
 
     public data = {};
     public changedName = "";
-
+    public keywords = '';
+    public type = '0';
     public userType = Config.userType;
 
     //绑定列表数据
     bindData = () => {
-        this.userService.list()
+        this.userService.list(this.keywords, this.type)
             .then((result) => {
                 this.data = result
             });
@@ -60,6 +61,30 @@ export class UserListComponent {
 
     //修改密码
     changePasswordFn = () => {
+        let data = new FormData(document.forms['formData']);
 
+        // data.append('userId', localStorage.getItem("userId"));
+
+        this.userService.changePasswordAdmin(data)
+            .then(res => {
+                if (res.success) {
+                    alert("密码修改成功！");
+                    $("#myModal").modal("hide");
+                } else {
+                    alert(res.reason);
+                }
+            })
+    }
+
+    //搜索
+    search(keywords) {
+        this.keywords = keywords;
+
+        this.bindData();
+    }
+
+    changeType(type){
+        this.type = type;
+        this.bindData();
     }
 }
