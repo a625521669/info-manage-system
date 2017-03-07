@@ -62,7 +62,7 @@
                                 <a class="btn btn-success" routerLink="/user-modify/{{item.UserID}}">
                                     <i class="icon-zoom-in icon-white"></i> 编辑
                                 </a>
-                                <a class="btn btn-danger" (click)="deleteFn(item.NO)">
+                                <a class="btn btn-danger" (click)="deleteFn(item.UserName)">
                                     <i class="icon-trash icon-white"></i> 删除
                                 </a>
                             </td>
@@ -94,50 +94,3 @@
 
 </div>
 <!--/row-->
-
-<div class="modal hide fade" id="myModal">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-        <h3>密码修改</h3>
-    </div>
-    <div class="modal-body">
-        <div class="row-fluid sortable ui-sortable">
-            <div class="box span12">
-                <div class="box-header well" data-original-title="">
-
-                </div>
-                <div class="box-content">
-                    <form id="formData" class="form-horizontal">
-                        <fieldset>
-                            <div class="control-group">
-                                <label class="control-label" for="focusedInput">用户名</label>
-                                <div class="controls">
-                                    <input name="userName" class="input-xlarge focused" type="text" [value]="changedName" disabled>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="focusedInput">新密码</label>
-                                <div class="controls">
-                                    <input name="newPassword1" class="input-xlarge focused" type="text">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="focusedInput">再次输入新密码</label>
-                                <div class="controls">
-                                    <input name="newPassword2" class="input-xlarge focused" type="text">
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-
-                </div>
-            </div>
-            <!--/span-->
-
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#" class="btn" data-dismiss="modal">取消</a>
-        <a (click)="changePasswordFn" class="btn btn-primary">保存修改</a>
-    </div>
-</div>
