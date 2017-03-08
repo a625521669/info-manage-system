@@ -1,5 +1,5 @@
 export default {
-    apiHost: "http://localhost:52097",
+    apiHost: "http://localhost:197",
     userType: {
         "1": "学生",
         "2": "教师",

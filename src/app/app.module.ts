@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { UserModule } from './user/user.module';
 import { LoginModule } from './login/login.module';
+import { OtherModule } from './other/other.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,6 +22,7 @@ import { appRoutesModule } from './app.router';
     HttpModule,
     UserModule,
     LoginModule,
+    OtherModule,
     appRoutesModule
   ],
   declarations: [
