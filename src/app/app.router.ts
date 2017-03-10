@@ -33,4 +33,10 @@ const appRoutes: Routes = [
   ]
 })
 
-export class appRoutesModule {}
+export class appRoutesModule {
+    this = 100;
+
+    newUser() {
+
+    }
+}

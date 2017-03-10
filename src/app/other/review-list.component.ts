@@ -8,25 +8,22 @@ import Config from '../app.config';
 declare const $: any;
 
 @Component({
-    selector: 'NewsList',
-    templateUrl: './news-list.component.html',
+    selector: 'RevieList',
+    templateUrl: './review-list.component.html',
     providers: [OtherService]
 })
 
-export class NewsListComponent {
+export class ReviewListComponent {
     //构造方法
     constructor(private service: OtherService) {
     }
 
     public data = {};
-    public changedName = "";
     public keywords = '';
-    public type = '所有';
-    public userType = Config.userType;
 
     //绑定列表数据
     bindData = () => {
-        this.service.newsList(this.keywords, this.type)
+        this.service.reviewList(this.keywords)
             .then((result) => {
                 this.data = result
             });
@@ -39,7 +36,7 @@ export class NewsListComponent {
 
     deleteFn = (id) => {
         if (window.confirm('你确定要删除吗？')) {
-            this.service.newsDelete(id)
+            this.service.reviewDelete(id)
                 .then((result) => {
                     this.bindData();
                     result.success == true ? alert("删除成功！") : alert(result.reason);
@@ -58,8 +55,4 @@ export class NewsListComponent {
         this.bindData();
     }
 
-    changeType(type){
-        this.type = type;
-        this.bindData();
-    }
 }

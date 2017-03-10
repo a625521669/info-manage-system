@@ -9,22 +9,31 @@ import { NewsAddComponent } from './news-add.component';
 import { NewsModifyComponent } from './news-modify.component';
 import { NewsListComponent } from './news-list.component';
 
+import { ReviewAddComponent } from './review-add.component';
+import { ReviewListComponent } from './review-list.component';
+
 @NgModule({
-  imports: [
-    CommonModule,
-    OtherRoutesModule,
-    FormsModule
-  ],
-  declarations: [
-    NewsAddComponent,
-    NewsModifyComponent,
-    NewsListComponent,
-  ],
-  exports: [
-    NewsAddComponent,
-    NewsModifyComponent,
-    NewsListComponent,
-  ],
+    imports: [
+        CommonModule,
+        OtherRoutesModule,
+        FormsModule
+    ],
+    declarations: [
+        NewsAddComponent,
+        NewsModifyComponent,
+        NewsListComponent,
+
+        ReviewAddComponent,
+        ReviewListComponent
+    ],
+    exports: [
+        NewsAddComponent,
+        NewsModifyComponent,
+        NewsListComponent,
+
+        ReviewAddComponent,
+        ReviewListComponent
+    ],
 })
 
 export class OtherModule { }

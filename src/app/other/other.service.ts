@@ -38,4 +38,22 @@ export class OtherService {
             .toPromise()
             .then(res => res.json())
     }
+
+    reviewAdd(body) {
+        return this.http.post(Config.apiHost + "/reviews/add", body)
+            .toPromise()
+            .then(res => res.json())
+    }
+
+    reviewList(keywords) {
+        return this.http.get(Config.apiHost + "/reviews/list?keywords=" + keywords)
+            .toPromise()
+            .then(res => res.json())
+    }
+
+    reviewDelete(id) {
+        return this.http.get(Config.apiHost + "/reviews/delete?id=" + id)
+            .toPromise()
+            .then(res => res.json())
+    }
 }

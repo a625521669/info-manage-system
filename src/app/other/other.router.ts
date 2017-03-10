@@ -7,6 +7,10 @@ import { NewsListComponent } from './news-list.component';
 import { NewsAddComponent } from './news-add.component';
 import { NewsModifyComponent } from './news-modify.component';
 
+import { ReviewListComponent } from './review-list.component';
+import { ReviewAddComponent } from './review-add.component';
+
+
 const routerConfig: Routes = [
     {
         path: 'news-list',
@@ -21,6 +25,16 @@ const routerConfig: Routes = [
     {
         path: 'news-modify/:id',
         component: NewsModifyComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'review-list',
+        component: ReviewListComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'review-add',
+        component: ReviewAddComponent,
         canActivate: [AuthGuard]
     },
 ]

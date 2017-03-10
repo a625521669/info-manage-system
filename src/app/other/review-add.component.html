@@ -4,7 +4,7 @@
             <a routerLink="/">首页</a> <span class="divider">/</span>
         </li>
         <li>
-            <a>添加新闻公告</a>
+            <a>添加评价留言</a>
         </li>
     </ul>
 </div>
@@ -13,34 +13,35 @@
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">
-            <h2><i class="icon-edit"></i> 添加新闻公告</h2>
+            <h2><i class="icon-edit"></i> 添加评价留言</h2>
         </div>
         <div class="box-content">
             <form id="formData" class="form-horizontal">
                 <fieldset>
                     <div class="control-group">
-                        <label class="control-label" for="selectError3">类型</label>
+                        <label class="control-label" for="selectError3">选择的教师</label>
                         <div class="controls">
-                            <select name="Type">
-                                <option value="新闻">新闻</option>
-                                <option value="公告">公告</option>
-                                <option value="公开课">公开课</option>
-								  </select>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="focusedInput">标题</label>
-                        <div class="controls">
-                            <input name="Title" class="input-xlarge focused" id="focusedInput" type="text">
+                            <select [(ngModel)]="selectedUserName" name="TeacherUserName">
+                                <option value="">选择教师</option>
+                                <option *ngFor="let item of teacherList; let i=index"  [value]="item.UserName">{{item.Name}}({{item.UserName}})</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label" for="focusedInput">内容</label>
+                        <label class="control-label" for="focusedInput">评价</label>
                         <div class="controls">
-                            <textarea name="Detail" id="" cols="30" rows="10" style="width:100%;"></textarea>
+                            <textarea name="Contents" cols="30" rows="10" style="width:100%;"></textarea>
                         </div>
                     </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="focusedInput">留言</label>
+                        <div class="controls">
+                            <textarea name="Reviews" cols="30" rows="10" style="width:100%;"></textarea>
+                        </div>
+                    </div>
+
                     <div class="form-actions">
                         <button (click)="saveData()" type="button" class="btn btn-primary">添加</button>
                         <button class="btn" type="reset">重置</button>

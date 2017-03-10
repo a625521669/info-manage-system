@@ -1,5 +1,8 @@
-import { userRoutesModule } from './user/user.router';
 //该服务能让用户登录，并且保存当前用户的信息
+
+
+import { userRoutesModule } from './user/user.router';
+
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/observable';
@@ -30,6 +33,8 @@ export class AuthService {
 
     logout(): void {
         localStorage.clear();
+
         this.isLogin = false;
     }
 }
+
