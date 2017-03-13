@@ -8,9 +8,11 @@ import { OtherRoutesModule } from './other.router';
 import { NewsAddComponent } from './news-add.component';
 import { NewsModifyComponent } from './news-modify.component';
 import { NewsListComponent } from './news-list.component';
+import { NewsListAdminComponent } from './news-list-admin.component';
 
 import { ReviewAddComponent } from './review-add.component';
 import { ReviewListComponent } from './review-list.component';
+import { ReviewListAdminComponent } from './review-list-admin.component';
 
 @NgModule({
     imports: [
@@ -22,17 +24,21 @@ import { ReviewListComponent } from './review-list.component';
         NewsAddComponent,
         NewsModifyComponent,
         NewsListComponent,
+        NewsListAdminComponent,
 
         ReviewAddComponent,
-        ReviewListComponent
+        ReviewListComponent,
+        ReviewListAdminComponent
     ],
     exports: [
         NewsAddComponent,
         NewsModifyComponent,
         NewsListComponent,
+        NewsListAdminComponent,
 
         ReviewAddComponent,
-        ReviewListComponent
+        ReviewListComponent,
+        ReviewListAdminComponent
     ],
 })
 

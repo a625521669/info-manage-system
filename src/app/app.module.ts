@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 import { LoginModule } from './login/login.module';
 import { OtherModule } from './other/other.module';
+import { CourseModule } from './course/course.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,22 +18,23 @@ import { appRoutesModule } from './app.router';
 
 @NgModule({
     imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    UserModule,
-    LoginModule,
-    OtherModule,
-    appRoutesModule
-  ],
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SliderComponent,
-    HomeComponent,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        UserModule,
+        LoginModule,
+        OtherModule,
+        CourseModule,
+        appRoutesModule
+    ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        SliderComponent,
+        HomeComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }

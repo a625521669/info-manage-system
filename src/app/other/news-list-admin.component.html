@@ -51,7 +51,7 @@
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">内容</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">发布时间</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">发布者</th>
-                                <!--<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending">操作</th>-->
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending">操作</th>
                             </tr>
                         </thead>
 
@@ -64,14 +64,14 @@
                                 <td class="center ">{{item.PubDate | date:"yyyy/MM/dd"}}</td>
                                 <td class="sorting_1">{{item.Author}}</td>
 
-                                <!--<td class="center ">
+                                <td class="center ">
                                     <a class="btn btn-success" routerLink="/news-modify/{{item.ID}}">
                                         <i class=" icon-zoom-in icon-white "></i> 编辑
                                     </a>
                                     <a class="btn btn-danger" (click)="deleteFn(item.ID)">
                                         <i class="icon-trash icon-white "></i> 删除
                                     </a>
-                                </td>-->
+                                </td>
                             </tr>
 
                         </tbody>

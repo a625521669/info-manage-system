@@ -1,0 +1,95 @@
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a routerLink="/">首页</a> <span class="divider">/</span>
+        </li>
+        <li>
+            <a>编辑课程</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="row-fluid sortable ui-sortable">
+    <div class="box span12">
+        <div class="box-header well" data-original-title="">
+            <h2><i class="icon-edit"></i> 编辑课程</h2>
+        </div>
+        <div class="box-content">
+            <form id="formData" class="form-horizontal">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">课程名称</label>
+                        <div class="controls">
+                            <input [(ngModel)]="data.CourseName" name="CourseName" class="input-xlarge focused" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="focusedInput">专业</label>
+                        <div class="controls">
+                            <select [(ngModel)]="data.Subject" name="Subject" class="form-control">
+                                <option value="计算机科学与技术">计算机科学与技术</option>
+                                <option value="数字媒体">数字媒体</option>
+                                <option value="网络工程">网络工程</option>
+                                <option value="信息管理">信息管理</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="focusedInput">描述</label>
+                        <div class="controls">
+                            <textarea [(ngModel)]="data.Contents" name="Contents" id="" cols="30" rows="10" style="width:100%;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">学分</label>
+                        <div class="controls">
+                            <input [(ngModel)]="data.Credit" name="Credit" class="input-xlarge focused" type="number">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">课时</label>
+                        <div class="controls">
+                            <input [(ngModel)]="data.ExamTime" name="ExamTime" class="input-xlarge focused" type="number">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">任课老师编号</label>
+                        <div class="controls">
+
+                            <input [(ngModel)]="data.TeacherUserName" name="TeacherUserName" class="input-xlarge focused" type="text">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">选课截至日期</label>
+                        <div class="controls">
+                            <input [value]="data.Time | date:'yyyy-MM-dd'" name="Time" class="input-xlarge focused" type="date">
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">选课人数上限</label>
+                        <div class="controls">
+                            <input [(ngModel)]="data.QuantityLimit" name="QuantityLimit" class="input-xlarge focused" type="number">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button (click)="saveData(data.ID)" type="button" class="btn btn-primary">添加</button>
+                        <button class="btn" type="reset">重置</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    <!--/span-->
+
+</div>
+<!--/row-->

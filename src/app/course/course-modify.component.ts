@@ -1,22 +1,26 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
-import { UserService } from './user.service';
+import { CourseService } from './course.service';
+import { UserService } from '../user/user.service';
 
 @Component({
-    selector: 'UserModify',
-    templateUrl: './user-modify.component.html',
-    providers: [UserService]
+    selector: 'CourseModify',
+    templateUrl: './course-modify.component.html',
+    providers: [CourseService, UserService]
 })
 
-export class UserModifyComponent {
+export class CourseModifyComponent {
     public data = {};
+    public teacherList = [];
+
 
     //构造方法
-    constructor(private userService: UserService, public router: Router, public route: ActivatedRoute) {
+    constructor(private service: CourseService, private uService: UserService, public router: Router, public route: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -26,20 +30,27 @@ export class UserModifyComponent {
         //方法二，用观察者模式获取id
         this.route.params
             // (+) converts string 'id' to a number
-            .switchMap(params => this.userService.getInfo(params['id']))
+            .switchMap(params => this.service.courseInfo(params['id']))
             .subscribe(data => this.data = data);
+
+
+        //获取教师数据
+        this.uService.infoList("", "教师")
+            .then(res => {
+                this.teacherList = res.list;
+            })
     }
 
-    saveData() {
+    saveData(id) {
         let data = new FormData(document.forms['formData']);
 
-        data.append('UserID', this.route.snapshot.params['id']);
+        data.append('ID', id);
 
-        this.userService.modifyUser(data)
+        this.service.courseModify(data)
             .then((result) => {
                 if (result.success) {
                     alert('修改成功！');
-                    this.router.navigate(['/user-list/info']);
+                    this.router.navigate(['/course-list/admin']);
 
                 } else {
                     alert(result.Reason);
