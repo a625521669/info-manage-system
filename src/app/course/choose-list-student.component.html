@@ -4,7 +4,7 @@
             <a routerLink="/">首页</a> <span class="divider">/</span>
         </li>
         <li>
-            <a>课程列表</a>
+            <a>选课列表</a>
         </li>
     </ul>
 </div>
@@ -12,7 +12,7 @@
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">
-            <h2><i class="icon-list"></i> 课程列表</h2>
+            <h2><i class="icon-list"></i> 选课列表</h2>
             <div class="box-icon">
                 <!--<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -24,10 +24,9 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <!--<div id="DataTables_Table_0_length" class="dataTables_length"><label><select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label></div>-->
-                        <div class="span6">
-                            <div class="dataTables_filter" id="DataTables_Table_0_filter"><label>专业: 
+                        <!--<div class="span6">
+                            <div class="dataTables_filter" id="DataTables_Table_0_filter"><label>专业:
                             <select (change)="changeType($event.target.value)" class="from-control">
-                                <option value="">所有</option>
                                 <option value="计算机科学与技术">计算机科学与技术</option>
                                 <option value="数字媒体">数字媒体</option>
                                 <option value="网络工程">网络工程</option>
@@ -35,11 +34,11 @@
                             </select>
                             </label>
                             </div>
-                        </div>
+                        </div>-->
 
 
                         <div class="span6">
-                            <div class="dataTables_filter" id="DataTables_Table_0_filter"><label>搜索: <input [value]="keywords" (input)="search($event.target.value)" type="text" aria-controls="DataTables_Table_0" placeholder="课程编号"></label></div>
+                            <div class="dataTables_filter" id="DataTables_Table_0_filter"><label>搜索: <input [value]="keywords" (input)="search($event.target.value)" type="text" aria-controls="DataTables_Table_0" placeholder="任课教师"></label></div>
                         </div>
                     </div>
 
@@ -48,15 +47,15 @@
                             <tr role="row">
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending">序号</th>
                                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">课程编号</th>
-                                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">课程名称</th>
+                                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">名称</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending">专业</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">描述</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">学分</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">课时</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">任课老师</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">人数限制</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">已选人数</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">选课截至日期</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">考试时间</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">考试地点</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">考试成绩</th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending">操作</th>
                             </tr>
                         </thead>
@@ -64,19 +63,19 @@
                         <tbody role="alert" aria-live="polite" aria-relevant="all">
                             <tr class="even" *ngFor="let item of data.list; let i=index">
                                 <td class="center">{{i + 1}}</td>
-                                <td class="sorting_1">{{item.ID}}</td>
-                                <td class="sorting_1">{{item.CourseName}}</td>
-                                <td class="sorting_1">{{item.Subject}}</td>
-                                <td class="sorting_1">{{item.Contents}}</td>
-                                <td class="sorting_1">{{item.Credit}}</td>
-                                <td class="sorting_1">{{item.ExamTime}}</td>
-                                <td class="sorting_1">{{item.TeacherUserName}}</td>
-                                <td class="sorting_1">{{item.QuantityLimit}}</td>
-                                <td class="sorting_1">{{item.SelectedCount}}</td>
-                                <td class="sorting_1">{{item.Time | date:'yyyy/MM/dd'}}</td>
+                                <td class="sorting_1">{{item.CourseInfo.ID}}</td>
+                                <td class="sorting_1">{{item.CourseInfo.CourseName}}</td>
+                                <td class="sorting_1">{{item.CourseInfo.Subject}}</td>
+                                <td class="sorting_1">{{item.CourseInfo.Contents}}</td>
+                                <td class="sorting_1">{{item.CourseInfo.Credit}}</td>
+                                <td class="sorting_1">{{item.CourseInfo.Time}}</td>
+                                <td class="sorting_1">{{item.ChooseInfo.TeacherName}}</td>
+                                <td class="sorting_1">{{item.ChooseInfo.ExamTime}}</td>
+                                <td class="sorting_1">{{item.ChooseInfo.ExamPositon}}</td>
+                                <td class="sorting_1">{{item.ChooseInfo.Score}}</td>
                                 <td class="center ">
-                                    <a class="btn btn-success" (click)="chooseFn(item.ID)">
-                                         选课
+                                    <a class="btn btn-danger" (click)="deleteFn(item.ID)">
+                                        <i class="icon-trash icon-white"></i> 取消选课
                                     </a>
                                 </td>
                             </tr>
@@ -87,16 +86,16 @@
                         <div class="span12">
                             <!--<div class="dataTables_info " id="DataTables_Table_0_info ">Showing 1 to 10 of 32 entries</div>-->
                         </div>
-                        <div class="span12 center">
+                        <div class="span12 center ">
                             <div class="dataTables_paginate paging_bootstrap pagination ">
                                 <!--<ul>
-                                <li class="prev disabled "><a href="# ">← Previous</a></li>
-                                <li class="active "><a href="# ">1</a></li>
-                                <li><a href="# ">2</a></li>
-                                <li><a href="# ">3</a></li>
-                                <li><a href="# ">4</a></li>
-                                <li class="next "><a href="# ">Next → </a></li>
-                            </ul>-->
+                                    <li class="prev disabled "><a href="# ">← Previous</a></li>
+                                    <li class="active "><a href="# ">1</a></li>
+                                    <li><a href="# ">2</a></li>
+                                    <li><a href="# ">3</a></li>
+                                    <li><a href="# ">4</a></li>
+                                    <li class="next "><a href="# ">Next → </a></li>
+                                </ul>-->
                             </div>
                         </div>
                     </div>

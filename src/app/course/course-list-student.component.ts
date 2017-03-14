@@ -21,7 +21,7 @@ export class CourseListStudentComponent {
     public data = {};
     public changedName = "";
     public keywords = '';
-    public type = '所有';
+    public type = '';
     public userType = Config.userType;
 
     //绑定列表数据
@@ -37,12 +37,12 @@ export class CourseListStudentComponent {
         this.bindData();
     }
 
-    deleteFn = (id) => {
-        if (window.confirm('你确定要删除吗？')) {
-            this.service.courseDelete(id)
+    chooseFn = (id) => {
+        if (window.confirm('你确定要选课吗？')) {
+            this.service.courseChoose(id, localStorage.getItem("userName"))
                 .then((result) => {
                     this.bindData();
-                    result.success == true ? alert("删除成功！") : alert(result.reason);
+                    result.success == true ? alert("选课成功！") : alert(result.reason);
                 });
             return true;
         } else {

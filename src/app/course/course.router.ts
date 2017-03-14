@@ -8,7 +8,10 @@ import { CourseListStudentComponent } from './course-list-student.component';
 import { CourseAddComponent } from './course-add.component';
 import { CourseModifyComponent } from './course-modify.component';
 
+import { ChooseListAdminComponent } from './choose-list-admin.component';
+import { ChooseListStudentComponent } from './choose-list-student.component';
 
+import { ExamModifyComponent } from './exam-modify.component';
 
 const routerConfig: Routes = [
     {
@@ -30,7 +33,22 @@ const routerConfig: Routes = [
         path: 'course-modify/:id',
         component: CourseModifyComponent,
         canActivate: [AuthGuard]
-    }
+    },
+    {
+        path: 'choose-list/admin',
+        component: ChooseListAdminComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'choose-list/student',
+        component: ChooseListStudentComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'exam-modify',
+        component: ExamModifyComponent,
+        canActivate: [AuthGuard]
+    },
 ]
 
 

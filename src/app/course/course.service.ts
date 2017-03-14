@@ -44,4 +44,22 @@ export class CourseService {
             .toPromise()
             .then(response => response.json())
     }
+
+    cancelChoose(id) {
+        return this.http.get(Config.apiHost + "/course/cancelChoose?id=" + id)
+            .toPromise()
+            .then(response => response.json())
+    }
+
+    chooseList(studentNo, teacherName) {
+        return this.http.get(Config.apiHost + "/course/chooseList?studentNo=" + studentNo + "&teacherName=" + teacherName)
+            .toPromise()
+            .then(response => response.json())
+    }
+
+    examModify(body) {
+        return this.http.post(Config.apiHost + "/course/examModify", body)
+            .toPromise()
+            .then(res => res.json())
+    }
 }

@@ -8,12 +8,12 @@ import Config from '../app.config';
 declare const $: any;
 
 @Component({
-    selector: 'CourseListAdmin',
-    templateUrl: './course-list-admin.component.html',
+    selector: 'ChooseListStudent',
+    templateUrl: './choose-list-student.component.html',
     providers: [CourseService]
 })
 
-export class CourseListAdminComponent {
+export class ChooseListStudentComponent {
     //构造方法
     constructor(private service: CourseService) {
     }
@@ -26,7 +26,7 @@ export class CourseListAdminComponent {
 
     //绑定列表数据
     bindData = () => {
-        this.service.courseList(this.keywords, this.type)
+        this.service.chooseList(localStorage.getItem('userName'), this.keywords)
             .then((result) => {
                 this.data = result
             });
@@ -38,11 +38,11 @@ export class CourseListAdminComponent {
     }
 
     deleteFn = (id) => {
-        if (window.confirm('你确定要删除吗？')) {
-            this.service.courseDelete(id)
+        if (window.confirm('你确定要取消吗？')) {
+            this.service.cancelChoose(id)
                 .then((result) => {
                     this.bindData();
-                    result.success == true ? alert("删除成功！") : alert(result.reason);
+                    result.success == true ? alert("取消成功！") : alert(result.reason);
                 });
             return true;
         } else {
@@ -58,7 +58,7 @@ export class CourseListAdminComponent {
         this.bindData();
     }
 
-    changeType(type){
+    changeType(type) {
         this.type = type;
         this.bindData();
     }

@@ -10,6 +10,10 @@ import { CourseModifyComponent } from './course-modify.component';
 import { CourseListAdminComponent } from './course-list-admin.component';
 import { CourseListStudentComponent } from './course-list-student.component';
 
+import { ChooseListAdminComponent } from './choose-list-admin.component';
+import { ChooseListStudentComponent } from './choose-list-student.component';
+
+import { ExamModifyComponent } from './exam-modify.component';
 
 @NgModule({
     imports: [
@@ -22,12 +26,22 @@ import { CourseListStudentComponent } from './course-list-student.component';
         CourseModifyComponent,
         CourseListAdminComponent,
         CourseListStudentComponent,
+
+        ChooseListAdminComponent,
+        ChooseListStudentComponent,
+
+        ExamModifyComponent
     ],
     exports: [
         CourseAddComponent,
         CourseModifyComponent,
         CourseListAdminComponent,
         CourseListStudentComponent,
+
+        ChooseListAdminComponent,
+        ChooseListStudentComponent,
+
+        ExamModifyComponent
     ],
 })
 

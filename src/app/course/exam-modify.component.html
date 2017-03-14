@@ -1,0 +1,62 @@
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a routerLink="/">首页</a> <span class="divider">/</span>
+        </li>
+        <li>
+            <a>编辑课程</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="row-fluid sortable ui-sortable">
+    <div class="box span12">
+        <div class="box-header well" data-original-title="">
+            <h2><i class="icon-edit"></i> 编辑课程</h2>
+        </div>
+        <div class="box-content">
+            <form id="formData" class="form-horizontal">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">课程名称</label>
+                        <div class="controls">
+                            <input [(ngModel)]="data.CourseName" class="input-xlarge focused" type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">课程编号</label>
+                        <div class="controls">
+                            <input [(ngModel)]="data.ID" class="input-xlarge focused" type="text" disabled>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">考试时间</label>
+                        <div class="controls">
+                            <input [value]="data.ExamTime | date:'yyyy-MM-dd'" name="ExamTime" class="input-xlarge focused" type="datetime-local">
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectError3">考试地点</label>
+                        <div class="controls">
+                            <input [value]="data.ExamPosition" name="ExamPosition" class="input-xlarge focused" type="number">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button (click)="saveData(data.ID)" type="button" class="btn btn-primary">添加</button>
+                        <button class="btn" type="reset">重置</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    <!--/span-->
+
+</div>
+<!--/row-->
