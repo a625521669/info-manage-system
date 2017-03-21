@@ -15,6 +15,8 @@ import { ChooseListStudentComponent } from './choose-list-student.component';
 
 import { ExamModifyComponent } from './exam-modify.component';
 
+import { ScoreInputComponent } from './score-input.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -30,7 +32,9 @@ import { ExamModifyComponent } from './exam-modify.component';
         ChooseListAdminComponent,
         ChooseListStudentComponent,
 
-        ExamModifyComponent
+        ExamModifyComponent,
+
+        ScoreInputComponent
     ],
     exports: [
         CourseAddComponent,
@@ -41,7 +45,9 @@ import { ExamModifyComponent } from './exam-modify.component';
         ChooseListAdminComponent,
         ChooseListStudentComponent,
 
-        ExamModifyComponent
+        ExamModifyComponent,
+
+        ScoreInputComponent
     ],
 })
 

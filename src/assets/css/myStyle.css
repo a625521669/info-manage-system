@@ -1,0 +1,11 @@
+﻿.modal-list {
+  left: 44%;
+  width: 680px;
+}
+.modal.fade.in {
+  top: 30%;
+}
+.print-btn {
+  display: block;
+  margin: 0 auto;
+}

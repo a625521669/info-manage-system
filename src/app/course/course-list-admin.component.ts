@@ -8,7 +8,7 @@ import Config from '../app.config';
 declare const $: any;
 
 @Component({
-    selector: 'CourseListAdmin',
+    selector: 'course-list-admin',
     templateUrl: './course-list-admin.component.html',
     providers: [CourseService]
 })

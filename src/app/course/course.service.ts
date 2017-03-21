@@ -51,8 +51,8 @@ export class CourseService {
             .then(response => response.json())
     }
 
-    chooseList(studentNo, teacherName) {
-        return this.http.get(Config.apiHost + "/course/chooseList?studentNo=" + studentNo + "&teacherName=" + teacherName)
+    chooseList(studentNo, teacherName, teacherUserName = "", courseId = "", sort = 0) {
+        return this.http.get(Config.apiHost + "/course/chooseList?studentNo=" + studentNo + "&teacherName=" + teacherName + "&teacherUserName=" + teacherUserName + "&courseId=" + courseId + "&sort=" + sort)
             .toPromise()
             .then(response => response.json())
     }
@@ -61,5 +61,11 @@ export class CourseService {
         return this.http.post(Config.apiHost + "/course/examModify", body)
             .toPromise()
             .then(res => res.json())
+    }
+
+    scoreInput(ids, scores) {
+        return this.http.get(Config.apiHost + "/course/scoreInput?ids=" + ids + "&scores=" + scores)
+            .toPromise()
+            .then(response => response.json())
     }
 }

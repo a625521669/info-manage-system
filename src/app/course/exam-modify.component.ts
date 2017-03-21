@@ -10,7 +10,7 @@ import { UserService } from '../user/user.service';
 
 @Component({
     selector: 'CourseModify',
-    templateUrl: './course-modify.component.html',
+    templateUrl: './exam-modify.component.html',
     providers: [CourseService, UserService]
 })
 
@@ -49,7 +49,7 @@ export class ExamModifyComponent {
         this.service.examModify(data)
             .then((result) => {
                 if (result.success) {
-                    alert('修改成功！');
+                    alert('安排考试成功！');
                     this.router.navigate(['/course-list/admin']);
 
                 } else {

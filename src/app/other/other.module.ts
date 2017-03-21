@@ -14,11 +14,21 @@ import { ReviewAddComponent } from './review-add.component';
 import { ReviewListComponent } from './review-list.component';
 import { ReviewListAdminComponent } from './review-list-admin.component';
 
+import { FilterComponent } from './filter.component';
+
+import { UserModule } from '../user/user.module';
+
+import { CourseModule } from '../course/course.module';
+
+
 @NgModule({
     imports: [
         CommonModule,
         OtherRoutesModule,
-        FormsModule
+        FormsModule,
+
+        UserModule,
+        CourseModule
     ],
     declarations: [
         NewsAddComponent,
@@ -28,7 +38,10 @@ import { ReviewListAdminComponent } from './review-list-admin.component';
 
         ReviewAddComponent,
         ReviewListComponent,
-        ReviewListAdminComponent
+        ReviewListAdminComponent,
+
+        FilterComponent,
+
     ],
     exports: [
         NewsAddComponent,
@@ -38,7 +51,10 @@ import { ReviewListAdminComponent } from './review-list-admin.component';
 
         ReviewAddComponent,
         ReviewListComponent,
-        ReviewListAdminComponent
+        ReviewListAdminComponent,
+
+        FilterComponent,
+
     ],
 })
 

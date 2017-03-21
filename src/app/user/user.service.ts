@@ -15,9 +15,9 @@ export class UserService {
             .then(response => response.json())
     }
 
-    infoList(keywords, type = "") {
+    infoList(keywords, type = "", ownPart = '') {
 
-        return this.http.get(Config.apiHost + '/user/InfoList?keywords=' + keywords + "&type=" + type)
+        return this.http.get(Config.apiHost + '/user/InfoList?keywords=' + keywords + "&type=" + type + "&ownPart=" + ownPart)
             .toPromise()
             .then(response => response.json())
     }

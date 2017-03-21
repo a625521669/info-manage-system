@@ -4,7 +4,7 @@
             <a routerLink="/">首页</a> <span class="divider">/</span>
         </li>
         <li>
-            <a>编辑课程</a>
+            <a>考试安排</a>
         </li>
     </ul>
 </div>
@@ -13,7 +13,7 @@
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">
-            <h2><i class="icon-edit"></i> 编辑课程</h2>
+            <h2><i class="icon-edit"></i> 考试安排</h2>
         </div>
         <div class="box-content">
             <form id="formData" class="form-horizontal">
@@ -21,13 +21,13 @@
                     <div class="control-group">
                         <label class="control-label" for="selectError3">课程名称</label>
                         <div class="controls">
-                            <input [(ngModel)]="data.CourseName" class="input-xlarge focused" type="text" disabled>
+                            <input [value]="data.CourseName" class="input-xlarge focused" type="text" disabled>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="selectError3">课程编号</label>
                         <div class="controls">
-                            <input [(ngModel)]="data.ID" class="input-xlarge focused" type="text" disabled>
+                            <input [value]="data.ID" class="input-xlarge focused" type="text" disabled>
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@
                     <div class="control-group">
                         <label class="control-label" for="selectError3">考试时间</label>
                         <div class="controls">
-                            <input [value]="data.ExamTime | date:'yyyy-MM-dd'" name="ExamTime" class="input-xlarge focused" type="datetime-local">
+                            <input [value]="data.ExamTime | date:'yyyy-MM-ddTHH:mm:ss'" name="ExamTime" class="input-xlarge focused" type="datetime-local">
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
                     <div class="control-group">
                         <label class="control-label" for="selectError3">考试地点</label>
                         <div class="controls">
-                            <input [value]="data.ExamPosition" name="ExamPosition" class="input-xlarge focused" type="number">
+                            <input [value]="data.ExamPosition" name="ExamPosition" class="input-xlarge focused" type="text">
                         </div>
                     </div>
 

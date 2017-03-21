@@ -12,6 +12,8 @@ import { ReviewListComponent } from './review-list.component';
 import { ReviewListAdminComponent } from './review-list-admin.component';
 import { ReviewAddComponent } from './review-add.component';
 
+import { FilterComponent } from './filter.component';
+
 
 const routerConfig: Routes = [
     {
@@ -47,6 +49,11 @@ const routerConfig: Routes = [
     {
         path: 'review-add',
         component: ReviewAddComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'filter',
+        component: FilterComponent,
         canActivate: [AuthGuard]
     },
 ]

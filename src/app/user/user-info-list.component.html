@@ -1,4 +1,4 @@
-<div>
+<!--<div>
     <ul class="breadcrumb">
         <li>
             <a routerLink="/">首页</a> <span class="divider">/</span>
@@ -7,7 +7,7 @@
             <a>用户信息列表</a>
         </li>
     </ul>
-</div>
+</div>-->
 
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
@@ -21,7 +21,7 @@
         </div>
         <div class="box-content">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
-                <div class="row-fluid">
+                <div class="row-fluid" *ngIf="showType != 'filterResult'">
                     <div class="span6">
                         <!--<div id="DataTables_Table_0_length" class="dataTables_length"><label><select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label></div>-->
                     </div>
@@ -42,7 +42,7 @@
                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 149px;">班级</th>
                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 149px;">住址</th>
                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 149px;">电话号码</th>
-                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 565px;">操作</th>
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 565px;" *ngIf="showType != 'filterResult'">操作</th>
                         </tr>
                     </thead>
 
@@ -58,7 +58,7 @@
                             <td class="center ">{{item.OwnPart}}</td>
                             <td class="center ">{{item.Address}}</td>
                             <td class="center ">{{item.Phone}}</td>
-                            <td class="center ">
+                            <td class="center " *ngIf="showType != 'filterResult'">
                                 <a class="btn btn-success" routerLink="/user-modify/{{item.UserID}}">
                                     <i class="icon-zoom-in icon-white"></i> 编辑
                                 </a>

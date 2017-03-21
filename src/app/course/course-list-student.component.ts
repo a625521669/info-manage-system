@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { CourseService } from './course.service';
 
@@ -8,12 +8,14 @@ import Config from '../app.config';
 declare const $: any;
 
 @Component({
-    selector: 'CourseList',
+    selector: 'course-list',
     templateUrl: './course-list-student.component.html',
     providers: [CourseService]
 })
 
 export class CourseListStudentComponent {
+    @Input() showType;
+
     //构造方法
     constructor(private service: CourseService) {
     }
@@ -60,6 +62,18 @@ export class CourseListStudentComponent {
 
     changeType(type){
         this.type = type;
+        this.bindData();
+    }
+
+    @Input()
+    set subject(subject) {
+        this.type = subject;
+        this.bindData();
+    }
+
+    @Input()
+    set courseNo(courseNo) {
+        this.keywords = courseNo;
         this.bindData();
     }
 }
