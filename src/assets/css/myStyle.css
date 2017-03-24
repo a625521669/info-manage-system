@@ -5,6 +5,9 @@
 .modal.fade.in {
   top: 30%;
 }
+.modal.fade {
+  top: -200%;
+}
 .print-btn {
   display: block;
   margin: 0 auto;

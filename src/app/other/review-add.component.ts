@@ -3,6 +3,9 @@ import { OnInit } from '@angular/core';
 import { OtherService } from './other.service';
 import { UserService } from '../user/user.service';
 
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
+
 @Component({
     selector: 'ReviewAdd',
     templateUrl: './review-add.component.html',
@@ -16,8 +19,14 @@ export class ReviewAddComponent {
     public teacherList = [];
     public selectedUserName = "";
 
+    public pageType;
+
+
+
     //构造方法
-    constructor(private service: OtherService, private uService: UserService) { }
+    constructor(private service: OtherService, private uService: UserService, public router: Router, public route: ActivatedRoute) {
+
+    }
 
     fetchTeacher = () => {
         this.uService.infoList("", "教师")
@@ -30,6 +39,22 @@ export class ReviewAddComponent {
     }
 
     ngOnInit() {
+        //this.route.params
+        //    .switchMap(params => this.pageType = params['pageType'])
+
+        //this.pageType = this.route.snapshot.params['pageType'];
+
+        //this.route.params
+        //    .switchMap(params => params['pageType'])
+        //    .subscribe(pageType => {
+        //        if (this.pageType == "review" || this.pageType == "message")
+        //            this.pageType = "";
+
+        //        this.pageType = (this.pageType == undefined ? "" : this.pageType) + pageType;
+        //    });
+
+
+
         this.fetchTeacher();
     }
 

@@ -47,7 +47,7 @@ const routerConfig: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'review-add',
+        path: 'review-add/:pageType',
         component: ReviewAddComponent,
         canActivate: [AuthGuard]
     },

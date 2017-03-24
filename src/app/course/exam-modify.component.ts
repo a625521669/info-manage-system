@@ -29,7 +29,6 @@ export class ExamModifyComponent {
 
         //方法二，用观察者模式获取id
         this.route.params
-            // (+) converts string 'id' to a number
             .switchMap(params => this.service.courseInfo(params['id']))
             .subscribe(data => this.data = data);
 

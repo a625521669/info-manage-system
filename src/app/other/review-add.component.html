@@ -28,14 +28,14 @@
                         </div>
                     </div>
 
-                    <div class="control-group">
+                    <div class="control-group" *ngIf="pageType=='review'">
                         <label class="control-label" for="focusedInput">评价</label>
                         <div class="controls">
                             <textarea name="Contents" cols="30" rows="10" style="width:100%;"></textarea>
                         </div>
                     </div>
 
-                    <div class="control-group">
+                    <div class="control-group" *ngIf="pageType=='message'">
                         <label class="control-label" for="focusedInput">留言</label>
                         <div class="controls">
                             <textarea name="Reviews" cols="30" rows="10" style="width:100%;"></textarea>

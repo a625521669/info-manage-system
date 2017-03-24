@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { OtherService } from './other.service';
 
+
 import Config from '../app.config';
 
 //声明jquery
@@ -21,6 +22,8 @@ export class ReviewListComponent {
     public data = {};
     public keywords = '';
 
+
+
     //绑定列表数据
     bindData = () => {
         this.service.reviewList(this.keywords)
@@ -31,6 +34,7 @@ export class ReviewListComponent {
 
     //初始化数据
     ngOnInit(): void {
+
         this.bindData();
     }
 
