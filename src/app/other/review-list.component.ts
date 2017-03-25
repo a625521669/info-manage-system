@@ -27,8 +27,11 @@ export class ReviewListComponent {
     //绑定列表数据
     bindData = () => {
         this.service.reviewList(this.keywords)
-            .then((result) => {
-                this.data = result
+            .then((res) => {
+                res.list = res.list.filter(item => {
+                    return item.Contents != "" || item.Contents != null;
+                })
+                this.data = res
             });
     }
 

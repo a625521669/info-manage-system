@@ -29,11 +29,11 @@ export class ReviewAddComponent {
     }
 
     fetchTeacher = () => {
-        this.uService.infoList("", "教师")
+        this.uService.infoList("", "")
             .then(res => {
-                res.list = res.list.filter(item => {
-                    return item.Type == "教师";
-                })
+                //res.list = res.list.filter(item => {
+                //    return item.Type == "教师";
+                //})
                 this.teacherList = res.list;
             })
     }
@@ -53,14 +53,21 @@ export class ReviewAddComponent {
         //        this.pageType = (this.pageType == undefined ? "" : this.pageType) + pageType;
         //    });
 
+        this.route.params
+            .switchMap(params => params['pageType'])
+            .subscribe(pageType => {
+                if (this.pageType == "review" || this.pageType == "message")
+                    this.pageType = "";
 
+                this.pageType = (this.pageType == undefined ? "" : this.pageType) + pageType;
+            });
 
         this.fetchTeacher();
     }
 
     saveData = () => {
         if (this.selectedUserName == "") {
-            alert("请选择教师！");
+            alert("请选择对象！");
             return;
         }
 

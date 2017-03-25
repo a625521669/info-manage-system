@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { OtherService } from './other.service';
 
+
 import Config from '../app.config';
 
 //声明jquery
 declare const $: any;
 
 @Component({
-    selector: 'ReviewListAdmin',
-    templateUrl: './review-list-admin.component.html',
+    selector: 'MessageList',
+    templateUrl: './message-list.component.html',
     providers: [OtherService]
 })
 
-export class ReviewListAdminComponent {
+export class MessageListComponent {
     //构造方法
     constructor(private service: OtherService) {
     }
@@ -21,12 +22,14 @@ export class ReviewListAdminComponent {
     public data = {};
     public keywords = '';
 
+
+
     //绑定列表数据
     bindData = () => {
-        this.service.reviewList(this.keywords)
+        this.service.reviewList(this.keywords, localStorage.getItem('userName'))
             .then((res) => {
                 res.list = res.list.filter(item => {
-                    return item.Contents != "" || item.Contents != null;
+                    return item.Reviews != "" || item.Reviews != null;
                 })
                 this.data = res;
             });
@@ -34,6 +37,7 @@ export class ReviewListAdminComponent {
 
     //初始化数据
     ngOnInit(): void {
+
         this.bindData();
     }
 

@@ -11,6 +11,7 @@ import { NewsModifyComponent } from './news-modify.component';
 import { ReviewListComponent } from './review-list.component';
 import { ReviewListAdminComponent } from './review-list-admin.component';
 import { ReviewAddComponent } from './review-add.component';
+import { MessageListComponent } from './message-list.component';
 
 import { FilterComponent } from './filter.component';
 
@@ -54,6 +55,11 @@ const routerConfig: Routes = [
     {
         path: 'filter',
         component: FilterComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'message-list',
+        component: MessageListComponent,
         canActivate: [AuthGuard]
     },
 ]

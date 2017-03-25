@@ -8,7 +8,33 @@
         </li>
     </ul>
 </div>-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <!--<div class="item active">
+            <div class="con">
+                <p>4444</p>
+                <p>3434234234</p>
+            </div>
+        </div>-->
+        <div *ngFor="let item of data.list; let i=index;" class="item" [ngClass]="{active: i==1}">
+            <div class="con">
+                <p class="title">{{item.Title}} <span class="time">{{item.PubDate | date:"yyyy/MM/dd"}}</span></p>
+                <p>{{item.Detail}}</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">上一条</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">下一条</span>
+    </a>
+</div>
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">

@@ -12,3 +12,27 @@
   display: block;
   margin: 0 auto;
 }
+#carousel-example-generic .carousel-control {
+  width: 60px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 38px;
+}
+#carousel-example-generic .item {
+  height: 200px;
+  background-color: antiquewhite;
+}
+#carousel-example-generic .item .con {
+  padding: 20px 100px;
+}
+#carousel-example-generic .item .con p {
+  font-size: 18px;
+}
+#carousel-example-generic .item .con p.title {
+  color: red;
+}
+#carousel-example-generic .item .con p .time {
+  color: grey;
+}

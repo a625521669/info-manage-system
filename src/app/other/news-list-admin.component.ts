@@ -16,6 +16,7 @@ declare const $: any;
 export class NewsListAdminComponent {
     //构造方法
     constructor(private service: OtherService) {
+
     }
 
     public data = {};

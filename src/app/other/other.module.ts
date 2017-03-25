@@ -14,6 +14,8 @@ import { ReviewAddComponent } from './review-add.component';
 import { ReviewListComponent } from './review-list.component';
 import { ReviewListAdminComponent } from './review-list-admin.component';
 
+import { MessageListComponent } from './message-list.component';
+
 import { FilterComponent } from './filter.component';
 
 import { UserModule } from '../user/user.module';
@@ -39,6 +41,7 @@ import { CourseModule } from '../course/course.module';
         ReviewAddComponent,
         ReviewListComponent,
         ReviewListAdminComponent,
+        MessageListComponent,
 
         FilterComponent,
 
@@ -52,6 +55,7 @@ import { CourseModule } from '../course/course.module';
         ReviewAddComponent,
         ReviewListComponent,
         ReviewListAdminComponent,
+        MessageListComponent,
 
         FilterComponent,
 

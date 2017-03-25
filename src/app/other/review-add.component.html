@@ -19,10 +19,10 @@
             <form id="formData" class="form-horizontal">
                 <fieldset>
                     <div class="control-group">
-                        <label class="control-label" for="selectError3">选择的教师</label>
+                        <label class="control-label" for="selectError3">选择对象</label>
                         <div class="controls">
                             <select [(ngModel)]="selectedUserName" name="TeacherUserName">
-                                <option value="">选择教师</option>
+                                <option value="">选择对象</option>
                                 <option *ngFor="let item of teacherList; let i=index"  [value]="item.UserName">{{item.Name}}({{item.UserName}})</option>
                             </select>
                         </div>

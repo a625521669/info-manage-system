@@ -4,43 +4,15 @@
             <a routerLink="/">首页</a> <span class="divider">/</span>
         </li>
         <li>
-            <a>新闻公告列表</a>
+            <a>评价留言列表</a>
         </li>
     </ul>
 </div>-->
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <!--<div class="item active">
-            <div class="con">
-                <p>4444</p>
-                <p>3434234234</p>
-            </div>
-        </div>-->
-        <div *ngFor="let item of data.list; let i=index;" class="item" [ngClass]="{active: i==1}">
-            <div class="con">
-                <p class="title">{{item.Title}} <span class="time">{{item.PubDate | date:"yyyy/MM/dd"}}</span></p>
-                <p>{{item.Detail}}</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">上一条</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">下一条</span>
-    </a>
-</div>
-
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title="">
-            <h2><i class="icon-list"></i> 新闻公告列表</h2>
+            <h2><i class="icon-list"></i> 我的留言</h2>
             <div class="box-icon">
                 <!--<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -52,18 +24,6 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <!--<div id="DataTables_Table_0_length" class="dataTables_length"><label><select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label></div>-->
-                        <div class="span6">
-                            <div class="dataTables_filter" id="DataTables_Table_0_filter"><label>类型: 
-                            <select (change)="changeType($event.target.value)" class="from-control">
-                                <option value="所有">所有</option>
-                                <option value="新闻">新闻</option>
-                                <option value="公告">公告</option>
-                                <option value="公开课">公开课</option>
-                            </select>
-                            </label>
-                            </div>
-                        </div>
-
 
                         <div class="span6">
                             <div class="dataTables_filter" id="DataTables_Table_0_filter"><label>搜索: <input [value]="keywords" (input)="search($event.target.value)" type="text" aria-controls="DataTables_Table_0" placeholder="关键词"></label></div>
@@ -74,11 +34,12 @@
                         <thead>
                             <tr role="row">
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending">序号</th>
-                                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">标题</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending">类型</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">内容</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">发布时间</th>
-                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">发布者</th>
+                                <!--<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">教师编号</th>-->
+                                <!--<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">教师姓名</th>-->
+                                <!--<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending">评价内容</th>-->
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending">留言</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending">留言人</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending">时间</th>
                                 <!--<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending">操作</th>-->
                             </tr>
                         </thead>
@@ -86,11 +47,12 @@
                         <tbody role="alert" aria-live="polite" aria-relevant="all">
                             <tr class="even" *ngFor="let item of data.list; let i=index">
                                 <td class="center">{{i + 1}}</td>
-                                <td class="sorting_1">{{item.Title}}</td>
-                                <td class="sorting_1">{{item.Type}}</td>
-                                <td class="sorting_1">{{item.Detail}}</td>
-                                <td class="center ">{{item.PubDate | date:"yyyy/MM/dd"}}</td>
-                                <td class="sorting_1">{{item.Author}}</td>
+                                <!--<td class="sorting_1">{{item.TeacherUserName}}</td>
+                                <td class="sorting_1">{{item.TeacherName}}</td>-->
+                                <!--<td class="sorting_1">{{item.Contents}}</td>-->
+                                <td class="sorting_1">{{item.Reviews}}</td>
+                                <td class="sorting_1">{{item.UserName}}</td>
+                                <td class="center ">{{item.CreateOn | date:"yyyy/MM/dd"}}</td>
 
                                 <!--<td class="center ">
                                     <a class="btn btn-success" routerLink="/news-modify/{{item.ID}}">

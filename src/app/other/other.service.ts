@@ -45,8 +45,8 @@ export class OtherService {
             .then(res => res.json())
     }
 
-    reviewList(keywords) {
-        return this.http.get(Config.apiHost + "/reviews/list?keywords=" + keywords)
+    reviewList(keywords, tUserName = '') {
+        return this.http.get(Config.apiHost + "/reviews/list?keywords=" + keywords + "&tUserName=" + tUserName)
             .toPromise()
             .then(res => res.json())
     }
