@@ -17,6 +17,8 @@ import { ExamModifyComponent } from './exam-modify.component';
 
 import { ScoreInputComponent } from './score-input.component';
 
+import { GradeListComponent } from './grade-list.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -34,7 +36,9 @@ import { ScoreInputComponent } from './score-input.component';
 
         ExamModifyComponent,
 
-        ScoreInputComponent
+        ScoreInputComponent,
+
+        GradeListComponent
     ],
     exports: [
         CourseAddComponent,
@@ -47,7 +51,9 @@ import { ScoreInputComponent } from './score-input.component';
 
         ExamModifyComponent,
 
-        ScoreInputComponent
+        ScoreInputComponent,
+
+        GradeListComponent
     ],
 })
 

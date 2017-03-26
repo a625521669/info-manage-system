@@ -18,7 +18,7 @@
                 <p>3434234234</p>
             </div>
         </div>-->
-        <div *ngFor="let item of data.list; let i=index;" class="item" [ngClass]="{active: i==1}">
+        <div *ngFor="let item of data.list; let i=index;" class="item" [ngClass]="{active: i==0}">
             <div class="con">
                 <p class="title">{{item.Title}} <span class="time">{{item.PubDate | date:"yyyy/MM/dd"}}</span></p>
                 <p>{{item.Detail}}</p>

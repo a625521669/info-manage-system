@@ -80,7 +80,7 @@
                                 <td class="sorting_1">{{item.ChooseInfo.ExamPosition}}</td>
                                 <td class="sorting_1">{{item.ChooseInfo.Score}}</td>
                                 <td class="center ">
-                                    <a class="btn btn-danger" (click)="deleteFn(item.ID)" *ngIf="item.ChooseInfo.Score==null">
+                                    <a class="btn btn-danger" (click)="deleteFn(item.ChooseInfo.ID)" *ngIf="item.ChooseInfo.Score==null">
                                         <i class="icon-trash icon-white"></i> 取消选课
                                     </a>
                                 </td>

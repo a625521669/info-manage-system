@@ -31,9 +31,11 @@ export class ReviewAddComponent {
     fetchTeacher = () => {
         this.uService.infoList("", "")
             .then(res => {
-                //res.list = res.list.filter(item => {
-                //    return item.Type == "教师";
-                //})
+                if (localStorage.getItem('pemission') == '1')
+                    res.list = res.list.filter(item => {
+                        return item.Type == "教师";
+                    })
+
                 this.teacherList = res.list;
             })
     }
@@ -83,12 +85,8 @@ export class ReviewAddComponent {
 
         this.service.reviewAdd(data)
             .then((result) => {
-                if (result.success) {
-                    alert('添加成功！');
-                    document.forms['formData'].reset();
-                } else {
-                    alert(result.Reason);
-                }
+                alert('添加成功！');
+                document.forms['formData'].reset();
             })
     }
 };

@@ -15,6 +15,8 @@ import { ExamModifyComponent } from './exam-modify.component';
 
 import { ScoreInputComponent } from './score-input.component';
 
+import { GradeListComponent } from './grade-list.component';
+
 const routerConfig: Routes = [
     {
         path: 'course-list/admin',
@@ -54,6 +56,11 @@ const routerConfig: Routes = [
     {
         path: 'score-input',
         component: ScoreInputComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'grade-list',
+        component: GradeListComponent,
         canActivate: [AuthGuard]
     },
 ]

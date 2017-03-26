@@ -52,9 +52,9 @@
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label" for="selectError3">课时</label>
+                        <label class="control-label" for="selectError3">考试时间</label>
                         <div class="controls">
-                            <input [(ngModel)]="data.ExamTime" name="ExamTime" class="input-xlarge focused" type="number">
+                            <input [value]="data.ExamTime | date:'yyyy-MM-dd'" name="ExamTime" class="input-xlarge focused" type="date">
                         </div>
                     </div>
 
